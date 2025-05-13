@@ -8,7 +8,10 @@ command_router = Router()
 @command_router.message(CommandStart())
 async def handle_start(message: Message):
     logger.info(f"/start от пользователя {message.from_user.id}")
-    await message.answer("Привет! Я ваш туристический помощник 🤖")
+    await message.answer("Привет! Я ваш туристический помощник 🤖"
+                         "Я могу вам помочь выбрать маршрут путешествия,"
+                         "рассказать о достопримечательностях , а также"
+                         "помогу зарезирвировать билеты и гостинницу.")
 
 @command_router.message(Command("help"))
 async def handle_help(message: Message):
